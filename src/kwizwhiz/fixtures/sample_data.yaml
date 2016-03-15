@@ -1,0 +1,241 @@
+- model: auth.user
+  pk: 5
+  fields:
+    password: pbkdf2_sha256$24000$hHbZxsqAvTlg$aGLfmzC2grokKywJC1LkqkLz/dE6QFAlPs3SB/eWToo=
+    last_login: 2016-03-15 01:26:15.341991+00:00
+    is_superuser: true
+    username: admin
+    first_name: Admin
+    last_name: User
+    email: ''
+    is_staff: true
+    is_active: true
+    date_joined: 2016-03-15 01:15:43.843553+00:00
+    groups: []
+    user_permissions: []
+- model: auth.user
+  pk: 6
+  fields:
+    password: pbkdf2_sha256$24000$GQqoWGxkhjnp$shC1dY7L4U2DOpraKl+gMC8lX9y2aGjFBjjRWpFPO0U=
+    last_login: 2016-03-15 01:16:32.371638+00:00
+    is_superuser: false
+    username: demo
+    first_name: Demo
+    last_name: User
+    email: ''
+    is_staff: false
+    is_active: true
+    date_joined: 2016-03-15 01:15:43.844732+00:00
+    groups: []
+    user_permissions: []
+- model: kwizwhiz.lesson
+  pk: 1
+  fields: {created_timestamp: !!timestamp '2016-03-15 02:44:34.728357+00:00', modified_timestamp: !!timestamp '2016-03-15
+      02:44:34.728385+00:00', created_by: null, name: Django, description: An introductory
+      lesson to the Django web framework}
+- model: kwizwhiz.lesson
+  pk: 2
+  fields: {created_timestamp: !!timestamp '2016-03-15 02:44:52.006342+00:00', modified_timestamp: !!timestamp '2016-03-15
+      02:44:52.006370+00:00', created_by: null, name: PostgreSQL 9.5, description: A
+      lesson on some of the new features available in PostgreSQL 9.5}
+- model: kwizwhiz.lessonprinciple
+  pk: 1
+  fields:
+    created_timestamp: 2016-03-15 02:51:38.807476+00:00
+    modified_timestamp: 2016-03-15 02:57:08.025070+00:00
+    created_by: null
+    lesson: 1
+    content: "A fixture is a collection of data that Django knows how to import into\
+      \ a database.\r\n\r\nThe most straightforward way of creating a fixture if you\u2019\
+      ve already got some data is to use the manage.py dumpdata command. Or, you can\
+      \ write fixtures by hand; fixtures can be written as JSON, XML or YAML (with\
+      \ PyYAML installed) documents."
+    ordering: null
+    questions: [1]
+- model: kwizwhiz.lessonprinciple
+  pk: 2
+  fields:
+    created_timestamp: 2016-03-15 02:52:11.801935+00:00
+    modified_timestamp: 2016-03-15 03:04:48.723807+00:00
+    created_by: null
+    lesson: 1
+    content: "Migrations are Django\u2019s way of propagating changes you make to\
+      \ your models (adding a field, deleting a model, etc.) into your database schema.\
+      \ They\u2019re  designed to be mostly automatic, but you\u2019ll need to know\
+      \ when to make migrations, when to run them, and the common problems you might\
+      \ run into."
+    ordering: null
+    questions: [2]
+- model: kwizwhiz.lessonprinciple
+  pk: 3
+  fields:
+    created_timestamp: 2016-03-15 02:52:49.705855+00:00
+    modified_timestamp: 2016-03-15 03:04:44.150824+00:00
+    created_by: null
+    lesson: 1
+    content: "User objects are the core of the authentication system. They typically\
+      \ represent the people interacting with your site and are used to enable things\
+      \ like restricting access, registering user profiles, associating content with\
+      \ creators etc. Only one class of user exists in Django\u2019s authentication\
+      \ framework, i.e., 'superusers' or admin 'staff' users are just user objects\
+      \ with special attributes set, not different classes of user objects."
+    ordering: null
+    questions: [3]
+- model: kwizwhiz.lessonprinciple
+  pk: 4
+  fields:
+    created_timestamp: 2016-03-15 02:53:03.422602+00:00
+    modified_timestamp: 2016-03-15 03:05:29.936558+00:00
+    created_by: null
+    lesson: 1
+    content: "The package django.shortcuts collects helper functions and classes that\
+      \ \u201Cspan\u201D multiple levels of MVC."
+    ordering: null
+    questions: [4]
+- model: kwizwhiz.lessonprinciple
+  pk: 5
+  fields:
+    created_timestamp: 2016-03-15 02:53:39.164695+00:00
+    modified_timestamp: 2016-03-15 03:06:33.412544+00:00
+    created_by: null
+    lesson: 2
+    content: "Previously, in order to create a foreign table in PostgreSQL, you would\
+      \ need to define the table, referencing the destination columns and data types,\
+      \ and if you have a lot of tables, this can become tedious and error-prone,\
+      \ and when those tables change, you need to do it all over again.\r\n\r\nNow,\
+      \ the IMPORT FOREIGN SCHEMA command is available."
+    ordering: null
+    questions: [5]
+- model: kwizwhiz.lessonprinciple
+  pk: 6
+  fields:
+    created_timestamp: 2016-03-15 02:54:10.301817+00:00
+    modified_timestamp: 2016-03-15 03:08:33.591753+00:00
+    created_by: null
+    lesson: 2
+    content: "Postgres 9.5 has added BRIN indexes. BRIN stands for Block Range INdexes,\
+      \ and store metadata on a\r\nrange of pages. At the moment this means the minimum\
+      \ and maximum values per block.\r\nThis results in an inexpensive index that\
+      \ occupies a very small amount of space, and can speed up queries\r\nin extremely\
+      \ large tables. This allows the index to determine which blocks are the only\
+      \ ones worth\r\nchecking, and all others can be skipped. So if a 10GB table\
+      \ of order contained rows that were generally\r\nin order of order date, a BRIN\
+      \ index on the order_date column would allow the majority of the table to be\r\
+      \nskipped rather than performing a full sequential scan. This will still be\
+      \ slower than a regular BTREE\r\nindex on the same column, but with the benefits\
+      \ of it being far smaller and requires less maintenance."
+    ordering: null
+    questions: [6]
+- model: kwizwhiz.lessonprinciple
+  pk: 7
+  fields:
+    created_timestamp: 2016-03-15 02:54:23.193131+00:00
+    modified_timestamp: 2016-03-15 03:09:47.250494+00:00
+    created_by: null
+    lesson: 2
+    content: Foreign tables can now either inherit local tables, or be inherited from.
+    ordering: null
+    questions: [7]
+- model: kwizwhiz.lessonprinciple
+  pk: 8
+  fields:
+    created_timestamp: 2016-03-15 02:54:37.499025+00:00
+    modified_timestamp: 2016-03-15 03:10:35.034805+00:00
+    created_by: null
+    lesson: 2
+    content: In 9.3 (and to a greater extent in 9.4), JSONB data could be extracted
+      using various functions and operators, but nothing that could actually modify
+      the data. As of 9.5, JSONB data can now be modified.
+    ordering: null
+    questions: [8]
+- model: kwizwhiz.lessonprinciple
+  pk: 9
+  fields:
+    created_timestamp: 2016-03-15 02:55:05.119479+00:00
+    modified_timestamp: 2016-03-15 03:12:19.478039+00:00
+    created_by: null
+    lesson: 2
+    content: "9.5 brings support for \"UPSERT\" operations. \r\n\r\nINSERT is extended\
+      \ to accept an ON CONFLICT DO UPDATE/IGNORE clause. This clause specifies an\
+      \ alternative action to take in the event of a would-be duplicate violation."
+    ordering: null
+    questions: [9]
+- model: kwizwhiz.question
+  pk: 1
+  fields: {created_timestamp: !!timestamp '2016-03-15 02:55:47.048327+00:00', modified_timestamp: !!timestamp '2016-03-15
+      02:55:47.048354+00:00', created_by: null, content: Django provides a way to
+      dump existing data into fixtures., answer: 1, explanation: Django provides the
+      manage.py dumpdata command for this purpose., ordering: null}
+- model: kwizwhiz.question
+  pk: 2
+  fields: {created_timestamp: !!timestamp '2016-03-15 03:03:32.715121+00:00', modified_timestamp: !!timestamp '2016-03-15
+      03:03:32.715149+00:00', created_by: null, content: Migrations are automatically
+      updated and applied whenever a model is changed., answer: 2, explanation: 'Migrations
+      must be manually applied, and instructions for automatic creation must be supplied.',
+    ordering: null}
+- model: kwizwhiz.question
+  pk: 3
+  fields: {created_timestamp: !!timestamp '2016-03-15 03:04:39.734433+00:00', modified_timestamp: !!timestamp '2016-03-15
+      03:04:39.734461+00:00', created_by: null, content: Groups represent the people
+      interacting with your Django site., answer: 2, explanation: Users represent
+      the people interacting with your Django site., ordering: null}
+- model: kwizwhiz.question
+  pk: 4
+  fields: {created_timestamp: !!timestamp '2016-03-15 03:05:20.832718+00:00', modified_timestamp: !!timestamp '2016-03-15
+      03:05:20.832746+00:00', created_by: null, content: "The package django.shortcuts\
+      \ collects helper functions and classes that \u201Cspan\u201D multiple levels\
+      \ of MVC.", answer: 1, explanation: '', ordering: null}
+- model: kwizwhiz.question
+  pk: 5
+  fields: {created_timestamp: !!timestamp '2016-03-15 03:06:31.332418+00:00', modified_timestamp: !!timestamp '2016-03-15
+      03:06:31.332446+00:00', created_by: null, content: The IMPORT FOREIGN SCHEMA
+      command prevents the need to manually define foreign tables whenever those tables
+      change., answer: 1, explanation: '', ordering: null}
+- model: kwizwhiz.question
+  pk: 6
+  fields: {created_timestamp: !!timestamp '2016-03-15 03:08:32.051858+00:00', modified_timestamp: !!timestamp '2016-03-15
+      03:08:32.051886+00:00', created_by: null, content: BRIN indexes help with indexes
+      in large tables that are representative of block ranges., answer: 1, explanation: "BRIN\
+      \ stands for Block Range INdexes, and store metadata on a\r\nrange of pages.\
+      \ At the moment this means the minimum and maximum values per block.\r\nThis\
+      \ results in an inexpensive index that occupies a very small amount of space,\
+      \ and can speed up queries\r\nin extremely large tables.", ordering: null}
+- model: kwizwhiz.question
+  pk: 7
+  fields: {created_timestamp: !!timestamp '2016-03-15 03:09:44.619480+00:00', modified_timestamp: !!timestamp '2016-03-15
+      03:09:44.619508+00:00', created_by: null, content: 'Despite that PostgreSQL
+      9.5 now provides the ability to inherit from foreign tables, it does not yet
+      provide the ability to have foreign tables inherit from local tables.', answer: 2,
+    explanation: '', ordering: null}
+- model: kwizwhiz.question
+  pk: 8
+  fields: {created_timestamp: !!timestamp '2016-03-15 03:10:31.738065+00:00', modified_timestamp: !!timestamp '2016-03-15
+      03:10:31.738092+00:00', created_by: null, content: 'In 9.5, JSONB data is modifiable.',
+    answer: 1, explanation: '', ordering: null}
+- model: kwizwhiz.question
+  pk: 9
+  fields: {created_timestamp: !!timestamp '2016-03-15 03:12:16.780447+00:00', modified_timestamp: !!timestamp '2016-03-15
+      03:12:16.780474+00:00', created_by: null, content: 'Like MYSQL, PostgreSQL has
+      had trivial UPSERT support since the 90s.', answer: 2, explanation: 'UPSERT
+      was not available until 9.5, which was released in 2016.', ordering: null}
+- model: kwizwhiz.quiz
+  pk: 1
+  fields:
+    created_timestamp: 2016-03-15 03:13:31.591200+00:00
+    modified_timestamp: 2016-03-15 03:13:31.591233+00:00
+    created_by: null
+    lessons: [1]
+- model: kwizwhiz.quiz
+  pk: 2
+  fields:
+    created_timestamp: 2016-03-15 03:13:40.780653+00:00
+    modified_timestamp: 2016-03-15 03:13:40.780680+00:00
+    created_by: null
+    lessons: [2]
+- model: kwizwhiz.quiz
+  pk: 3
+  fields:
+    created_timestamp: 2016-03-15 03:13:46.940609+00:00
+    modified_timestamp: 2016-03-15 03:13:46.940636+00:00
+    created_by: null
+    lessons: [1, 2]

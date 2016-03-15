@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<div style="width: 100%;">
+   <div style="float:left; text-align: center; width: 50%">
+       <p class="section-header">Learn a lesson</p>
+       <form action="{% url 'lesson' %}">
+        {{ lessons_form }}
+       </form>
+   </div>
+   <div style="float:top; text-align:center">
+       <p class="section-header">Take a quiz</p>
+       <form action="{% url 'quiz' %}">
+        {{ quizzes_form }}
+       </form>
+   </div>
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+html {
+    background-color: antiquewhite;
+}
+
+.section-header {
+    font-size: 125%
+}
+
+.form-error {
+    color: red;
+    font-weight: bold;
+}
+
+.header {
+    text-align: right;
+}
+
+label {
+    padding-right: 1em;
+}
